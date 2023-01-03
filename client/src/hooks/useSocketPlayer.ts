@@ -1,6 +1,6 @@
 import { useSocket } from "../socket";
 import { ClientSocket } from "../types/event.types";
-import { LocalPlayerData } from "../types/localStorage.types";
+import { LocalPlayerData } from "../types/game.types";
 import useLocalPlayer from "./useLocalPlayer";
 
 interface SocketPlayerData extends LocalPlayerData {

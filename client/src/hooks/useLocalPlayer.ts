@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useLocalStorage } from "react-use";
 import packageJson from '../../package.json'
-import { LocalPlayerData } from "../types/localStorage.types";
+import { LocalPlayerData } from "../types/game.types";
 import { generateUUID } from "../utils/data-utils";
 
 interface LocalPlayer {

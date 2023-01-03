@@ -1,9 +1,7 @@
-import { LocalPlayerData } from "./localStorage.types";
-
 export interface GameStateCore {
   id: string;
   players: {
-    [playerSocketId: string]: Player;
+    [playerId: string]: Player;
   };
   status: GameStatus;
 }
@@ -13,6 +11,12 @@ export type Game = GameStateCore;
 export enum GameStatus {
   LOBBY = "LOBBY",
   ONGOING = "ONGOING",
+}
+
+export interface LocalPlayerData {
+  id: string;
+  name: string;
+  gameId?: string;
 }
 
 export interface Player extends LocalPlayerData {
