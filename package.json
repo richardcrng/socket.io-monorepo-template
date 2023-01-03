@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "format": "yarn workspaces run format",
+    "format:check": "yarn workspaces run format:check",
+    "lint": "yarn workspaces run lint",
+    "lint:strict": "yarn workspaces run lint:strict",
+    "build": "yarn workspaces run build",
+    "dev:client": "yarn workspace @new-game/client dev",
+    "dev:server": "yarn workspace @new-game/server dev",
+    "start:server": "yarn workspace @new-game/server start",
+    "start:server:compiled": "yarn workspace @new-game/server start:compiled",
+    "test": "yarn workspaces run test",
+    "test:types": "yarn workspace @new-game/server test:types",
+    "test:client:watch": "yarn workspace @new-game/client test:watch",
+    "test:server:watch": "yarn workspace @new-game/server test:watch",
+    "heroku-postbuild": "yarn workspace @new-game/server build",
+    "prepare": "node ./prepare.js"
+  },
+  "devDependencies": {
+    "husky": "^7.0.0"
+  }
+}

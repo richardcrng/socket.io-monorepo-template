@@ -1,0 +1,14 @@
+:root {
+  --100vh: calc(var(--vh, 1vh) * 100);
+  --pvh: 10px;
+  --2pvh: calc(2 * var(--pvh));
+  --app-h: calc(var(--100vh) - var(--2pvh));
+  --app-w: min(100vw, 1000px);
+  --nav-h: 64px;
+  --app-minus-nav-h: calc(var(--app-h) - var(--nav-h));
+  --app-padding: 24px;
+  --app-minus-nav-and-padding-h: calc(
+    var(--app-minus-nav-h) - 2 * var(--app-padding)
+  );
+  --app-minus-padding-w: calc(var(--app-w) - var(--app-padding));
+}
