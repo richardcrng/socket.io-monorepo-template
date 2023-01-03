@@ -35,11 +35,15 @@ export function isSeedOrRNGOrPseudoRNG(
  * Based on: https://sebhastian.com/fisher-yates-shuffle-javascript/
  *
  * @param arr Array of element to shuffle
- * @param rng Random number generator (maybe seeded)
  * @returns a shuffled version of the array
  */
-export function fisherYatesShuffle<E>(arr: E[], rng: RNGOrPseudoRNG): E[] {
-  const copyToShuffle = [...arr];
+export function fisherYatesShuffle<Arr extends Array<unknown>>(
+  arr: Arr,
+  seedOrRNG?: string | SeedOrRNGOrPseudoRNG
+): Arr {
+  const copyToShuffle = [...arr] as Arr;
+
+  const rng = getRNGFromMaybeSeed(seedOrRNG);
 
   let i = copyToShuffle.length;
   while (--i > 0) {
