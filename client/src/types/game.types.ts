@@ -4,6 +4,7 @@ export interface GameStateCore {
     [playerId: string]: Player;
   };
   status: GameStatus;
+  settings: GameSettings;
 }
 
 export type Game = GameStateCore;
@@ -24,3 +25,5 @@ export interface Player extends LocalPlayerData {
   gameId: string;
   isHost?: boolean;
 }
+
+export interface GameSettings {}

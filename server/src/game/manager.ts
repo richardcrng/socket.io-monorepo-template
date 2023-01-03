@@ -97,6 +97,7 @@ export class GameManager {
         [host.id]: host,
       },
       status: GameStatus.LOBBY,
+      settings: {}
     };
 
     this._set(newGame);
