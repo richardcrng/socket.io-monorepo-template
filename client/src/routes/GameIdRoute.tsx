@@ -4,6 +4,7 @@ import useSocketPlayer from "../hooks/useSocketPlayer";
 import { GameStatus } from "../types/game.types";
 import IntroFrame from "../ui/molecules/IntroFrame";
 import GameIdView from "../views/GameIdView";
+import LoadingGameIdView from "../views/LoadingGameIdView";
 import { PATHS } from "./paths";
 
 export default function GameIdRoute(): JSX.Element {
@@ -13,9 +14,7 @@ export default function GameIdRoute(): JSX.Element {
 
   if (game.loading) {
     return (
-      <IntroFrame>
-        <p>Loading...</p>
-      </IntroFrame>
+      <LoadingGameIdView {...{ gameId }} />
     );
   }
 

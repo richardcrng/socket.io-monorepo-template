@@ -6,14 +6,12 @@ type Props = PropsWithChildren<{
   className?: string;
 }>;
 
-export default function IntroFrame({ className, children }: Props): JSX.Element {
+export default function IntroFrame({
+  className,
+  children,
+}: Props): JSX.Element {
   return (
-    <div
-      className={classNames(
-        "h-full flex flex-col justify-between items-center text-center",
-        className
-      )}
-    >
+    <div className={classNames("h-full", className)}>
       <div className="flex flex-col gap-y-2">
         <h1 className="text-3xl font-bold">{"[[ADD GAME NAME]]"}</h1>
         <Image

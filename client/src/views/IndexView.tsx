@@ -21,13 +21,19 @@ export default function IndexView({ onHostNew, onNavigateToHostGame, onNavigateT
   }
   
   return (
-    <IntroFrame>
+    <IntroFrame className="flex flex-col justify-between items-center text-center">
       <p className="text-xl">{"[[ADD GAME DESCRIPTION]]"}</p>
       <div className="w-full flex flex-col gap-y-2">
-        <button className="btn btn-primary btn-block btn-xl" onClick={handleTryJoinGame}>
+        <button
+          className="btn btn-primary btn-block btn-xl"
+          onClick={handleTryJoinGame}
+        >
           Join game
         </button>
-        <button className="btn btn-secondary btn-block btn-xl" onClick={onHostNew}>
+        <button
+          className="btn btn-secondary btn-block btn-xl"
+          onClick={onHostNew}
+        >
           Host new
         </button>
       </div>

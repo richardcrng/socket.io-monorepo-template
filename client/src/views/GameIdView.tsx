@@ -7,7 +7,7 @@ interface Props {
 
 export default function GameIdView({ game }: Props): JSX.Element {
   return (
-    <IntroFrame>
+    <IntroFrame className="flex flex-col justify-between items-center text-center">
       <p>Game has started!</p>
       <pre>{JSON.stringify(game, null, 2)}</pre>
     </IntroFrame>
