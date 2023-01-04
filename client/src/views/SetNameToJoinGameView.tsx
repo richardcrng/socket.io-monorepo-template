@@ -15,7 +15,7 @@ export default function SetNameToJoinGameView({
   takenNames = [],
 }: Props): JSX.Element {
   return (
-    <IntroFrame>
+    <IntroFrame className="flex flex-col justify-between items-center text-center">
       <p className="text-2xl">
         To {mode === "host" ? "host a new" : "join the"} game, please choose a
         player name first:

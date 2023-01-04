@@ -7,6 +7,8 @@ import useSocketListener from "../hooks/useSocketListener";
 import { useHistory } from "react-router";
 import { GameStatus } from "../types/game.types";
 import { PATHS } from "./paths";
+import { useEffect } from 'react';
+import LoadingGameIdView from "../views/LoadingGameIdView";
 
 function LobbyIdRoute(): JSX.Element {
   const { id: gameId } = useParams<{ id: string }>();
@@ -22,13 +24,20 @@ function LobbyIdRoute(): JSX.Element {
 
   const game = useGame(gameId);
 
+  useEffect(() => {
+    if (!game.loading && !game.data) {
+      // stick in useEffect to avoid repeat messages
+      window.alert(`No game exists with ID ${gameId}`);
+      history.push(PATHS.index)
+    }
+  }, [gameId, game.loading, game.data, history]);
+
   if (game.loading) {
-    return <p>loading...</p>;
+    return <LoadingGameIdView {...{ gameId }} />;
   }
 
   if (!game.data) {
-    // no game exists so redirect
-    return <Redirect to="/" />;
+    return <LoadingGameIdView {...{ gameId }} />;
   }
 
   if (game.data.status === GameStatus.ONGOING) {

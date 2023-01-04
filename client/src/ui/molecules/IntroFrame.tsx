@@ -1,11 +1,17 @@
 import { Image } from "@mantine/core";
+import classNames from "classnames";
 import { PropsWithChildren } from "react";
 
-type Props = PropsWithChildren<{}>;
+type Props = PropsWithChildren<{
+  className?: string;
+}>;
 
-export default function IntroFrame({ children }: Props): JSX.Element {
+export default function IntroFrame({
+  className,
+  children,
+}: Props): JSX.Element {
   return (
-    <div className="h-full flex flex-col justify-between items-center text-center">
+    <div className={classNames("h-full", className)}>
       <div className="flex flex-col gap-y-2">
         <h1 className="text-3xl font-bold">{"[[ADD GAME NAME]]"}</h1>
         <Image

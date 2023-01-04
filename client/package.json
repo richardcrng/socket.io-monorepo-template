@@ -31,6 +31,7 @@
     "seedrandom": "^3.0.5",
     "socket.io-client": "^4.0.0",
     "styled-components": "^5.3.6",
+    "tailwindcss-classnames": "^3.0.7",
     "use-sound": "^4.0.1",
     "uuid": "^9.0.0",
     "web-vitals": "^1.0.1"
