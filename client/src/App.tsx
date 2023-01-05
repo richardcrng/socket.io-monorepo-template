@@ -43,8 +43,7 @@ const AppBackground = styled.div.attrs({
 const AppContainer = styled.div.attrs({
   className: "h-app w-app rounded-lg",
 })`
-  background-color: white;
-  opacity: 0.9;
+  background-color: rgba(255,255,255,0.9);
   padding: 5px;
 `;
 
