@@ -1,3 +1,4 @@
+import { isEqual } from "lodash";
 import { useEffect, useRef } from "react";
 import { useLocalStorage } from "react-use";
 import packageJson from "../../package.json";
@@ -39,7 +40,9 @@ export default function useLocalPlayer(): LocalPlayer {
         ...data,
         ...newPartialData,
       };
-      setValue(newOverallData);
+      if (!isEqual(data, newOverallData)) {
+        setValue(newOverallData);
+      }
       return newOverallData;
     },
   };
