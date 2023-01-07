@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 import { useLocalStorage } from "react-use";
-import packageJson from '../../package.json'
-import { LocalPlayerData } from "../types/game.types";
+import packageJson from "../../package.json";
+import { LocalPlayerData } from "../types/player.types";
 import { generateUUID } from "../utils/data-utils";
 
 interface LocalPlayer {
   data: LocalPlayerData;
-  assign(newData: Partial<LocalPlayerData>): LocalPlayerData;
+  assign<P extends Partial<LocalPlayerData>>(newData: P): LocalPlayerData & P;
 }
 
 export default function useLocalPlayer(): LocalPlayer {
@@ -14,7 +14,9 @@ export default function useLocalPlayer(): LocalPlayer {
   // use package.json name so it's cleaner in dev mode on
   //  localhost:3000 for new games based on template
   //  (all will have different keys in local storage)
-  const [value, setValue] = useLocalStorage<LocalPlayerData>(`player-${packageJson.name}`);
+  const [value, setValue] = useLocalStorage<LocalPlayerData>(
+    `player-${packageJson.name}`
+  );
 
   useEffect(() => {
     if (!value) {
@@ -33,7 +35,7 @@ export default function useLocalPlayer(): LocalPlayer {
   return {
     data,
     assign: (newPartialData) => {
-      const newOverallData: LocalPlayerData = {
+      const newOverallData = {
         ...data,
         ...newPartialData,
       };

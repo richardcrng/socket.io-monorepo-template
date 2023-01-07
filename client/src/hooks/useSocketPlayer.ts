@@ -1,6 +1,6 @@
 import { useSocket } from "../socket";
 import { ClientSocket } from "../types/event.types";
-import { LocalPlayerData } from "../types/game.types";
+import { LocalPlayerData } from "../types/player.types";
 import useLocalPlayer from "./useLocalPlayer";
 
 interface SocketPlayerData extends LocalPlayerData {
@@ -9,7 +9,7 @@ interface SocketPlayerData extends LocalPlayerData {
 
 interface SocketPlayer {
   data: SocketPlayerData;
-  assign(newData: Partial<LocalPlayerData>): SocketPlayerData;
+  assign<P extends Partial<LocalPlayerData>>(newData: P): SocketPlayerData & P;
   socket: ClientSocket;
 }
 
