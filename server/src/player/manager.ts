@@ -1,5 +1,5 @@
 import { cloneDeep } from "lodash";
-import { Player } from "../../../client/src/types/game.types";
+import { Player } from "../../../client/src/types/player.types";
 import { GameManager, Operation } from "../game/manager";
 
 export class PlayerManager {
