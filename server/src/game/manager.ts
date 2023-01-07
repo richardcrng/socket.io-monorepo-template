@@ -96,7 +96,7 @@ export class GameManager {
         [host.id]: host,
       },
       status: GameStatus.LOBBY,
-      settings: {}
+      settings: {},
     };
 
     this._set(newGame);
@@ -176,7 +176,9 @@ export class GameManager {
     this._set(game);
   }
 
-  public setWithPointer(cb: (gamePointer: GameStateCore) => GameStateCore): void {
+  public setWithPointer(
+    cb: (gamePointer: GameStateCore) => GameStateCore
+  ): void {
     this._withPointer((pointer) => {
       this.set(cb(pointer));
     });
@@ -187,6 +189,15 @@ export class GameManager {
     if (operation.status === "success") {
       return operation.result;
     }
+  }
+
+  public snapshotOrFail(): GameStateCore {
+    const operation = this._withPointer((pointer) => cloneDeep(pointer));
+    if (operation.status === "success") {
+      return operation.result;
+    }
+
+    throw new Error(`No snapshot exists for game ${this.gameId}`);
   }
 
   public start(): void {
