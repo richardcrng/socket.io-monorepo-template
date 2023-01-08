@@ -1,9 +1,10 @@
 import { useCopyToClipboard } from "react-use";
 import styled from "styled-components";
-import { Game, Player } from "../types/game.types";
+import { Game } from "../types/game.types";
 import { LobbyHandlers } from "../types/handler.types";
 import PlayerList from "../ui/atoms/PlayerList";
 import classNames from "classnames";
+import { Player } from "../types/player.types";
 
 interface Props extends LobbyHandlers {
   game: Game;
