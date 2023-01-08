@@ -50,9 +50,11 @@ function LobbyIdView({
           return (
             <PlayerListItemContents>
               <p style={{ marginLeft: "10px" }}>
-                {playerToRender.name}
-                {playerToRender.id === ownPlayerId && " (you)"}
-                {playerToRender.isHost && " (host)"}
+                <span className="font-medium">{playerToRender.name}</span>
+                <span className="font-light">
+                  {playerToRender.id === ownPlayerId && " (you)"}
+                  {playerToRender.isHost && " (host)"}
+                </span>
               </p>
               {player.isHost && playerToRender.id !== player.id && (
                 <button
