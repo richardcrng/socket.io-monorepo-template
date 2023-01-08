@@ -1,6 +1,6 @@
-# Cockroach Poker - backend
+# [[ADD GAME NAME]] - backend
 
-This is the backend code for Cockroach Poker:
+This is the backend code for [[ADD GAME NAME]]:
 
 - TypeScript
 - socket.io

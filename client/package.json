@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "CC-BY-NC-SA-4.0",
-  "description": "Cockroach Poker client",
+  "description": "[[ADD GAME NAME]] client",
   "dependencies": {
     "@mantine/core": "^4.1.4",
     "@mantine/hooks": "^4.1.4",

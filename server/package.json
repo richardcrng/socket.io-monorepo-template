@@ -1,7 +1,7 @@
 {
   "name": "@new-game/server",
   "version": "0.0.1",
-  "description": "Cockroach Poker Socket.io server",
+  "description": "[[ADD GAME NAME]] Socket.io server",
   "license": "CC-BY-NC-SA-4.0",
   "devDependencies": {
     "@babel/core": "^7.15.0",
