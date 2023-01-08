@@ -34,7 +34,11 @@ function PlayerNamer({
           setInputText(e.target.value);
         }}
       />
-      <button className="btn btn-block" onClick={handleSetClick}>
+      <button
+        className="btn btn-block"
+        disabled={inputText.length === 0}
+        onClick={handleSetClick}
+      >
         Set player name
       </button>
     </>
